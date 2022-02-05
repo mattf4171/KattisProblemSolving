@@ -1,13 +1,20 @@
+/* 
+Author: Matthew Fernandez
+Abstract: Input consists of up to 10000 integers, one per line. Each is in 
+the range [0,1000000]. Input ends at end of file.
+
+For each integer 𝑛, print the number of digits required to represent 𝑛! in base-10.
+Date: 2/4/2022
+*/
 #include <iostream>
 #include <vector>
 #include <math.h>
 #include <string> 
 #include <sstream>
-
 using namespace std;
 
 int main(){
-
+	
 	float N=0, input;
 	int i;
 	vector<int> allN;
