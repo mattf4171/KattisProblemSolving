@@ -1,3 +1,13 @@
+# Author: Matthew Fernandez
+# Abstract: 
+#   Input
+#       Input consists of up to 10000 integers, one per line. 
+#       Each is in the range [0,1000000]. Input ends at end of file.
+#   Output
+#       For each integer 𝑛, print the number of digits required to 
+#       represent 𝑛! in base-10.
+# Date: 2/4/2022
+
 import math
 
 vals = []   # empty lists
@@ -9,25 +19,10 @@ while(True): # read in the users values
         break
     N = float(N) # type cast from str to float
     vals.append(N) # add elements to list
-x = 0
 for i in range(0, len(vals)):
-    # iter = int(vals[i]+1)
+    x=0.0 # instantiate to 0 for each loop
     for j in range(2, int(vals[i]+1)):
-        x = x + math.log(j) 
+        x = x + math.log(j,10) 
     x = math.floor(x) # round down to nearest int
-    result = x +1 
+    result = int(x) + 1 
     print(result)
-
-# TODO: Fix the odd values for the input as follows
-# input:
-# 0
-# 1
-# 3
-# 10
-# 20
-# Output:
-# 1
-# 1
-# 2
-# 17
-# 59
