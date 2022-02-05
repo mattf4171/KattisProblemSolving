@@ -10,19 +10,17 @@
 
 import math
 
-vals = []   # empty lists
-base10_vals = []
-
+vals = []   # list to append user input values
 while(True): # read in the users values
     N = input() # input str type 
-    if(len(N) == 0):
+    if(len(N) == 0): # case where line !contain int
         break
     N = float(N) # type cast from str to float
     vals.append(N) # add elements to list
 for i in range(0, len(vals)):
     x=0.0 # instantiate to 0 for each loop
     for j in range(2, int(vals[i]+1)):
-        x = x + math.log(j,10) 
+        x = x + math.log(j,10) # log base 10
     x = math.floor(x) # round down to nearest int
     result = int(x) + 1 
-    print(result)
+    print(result) # show #digits required to show n! for each input
