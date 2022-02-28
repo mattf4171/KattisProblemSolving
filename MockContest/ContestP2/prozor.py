@@ -26,26 +26,41 @@
 # time to fly away.
 
 # R -> height frame, S -> width frame, K -> sides of racket
+import sys
+
+
 firstLine = [int(x) for x in input().split()]
-matrix = []
-intRow = []
-runningSumMatrix = []
-runSumRows = []
-for i in range(firstLine[0]): # create the char type matrix from input 
-    rows = [x for x in input().split()]
-    for j in range(0,len(rows)):
-        if(rows[j] == '.'):
-            intRow.append(0)
-        elif(rows[j] == '*'):
-            intRow.append(1)
-    matrix.append(intRow)
-print(matrix)
+rows = firstLine[0]
+cols = firstLine[1]
+grid = []
+# intRow = []
+# runningSumMatrix = []
+# runSumRows = []
+# for i in range(firstLine[0]): # create the char type matrix from input 
+#     rows = [x for x in input().split()]
+#     for j in range(0,len(rows)):
+#         if(rows[j] == '.'):
+#             intRow.append(0)
+#         elif(rows[j] == '*'):
+#             intRow.append(1)
+#     matrix.append(intRow)
+# print(matrix)
+# def dfs(i, j):
+#     return 0
 
-# create int type matrix from input
-# for i in range(len(matrix[0]))
 
-# for i in range(len(matrix[0])): # loop through all columns, create running sum
-#     for j in range(len(matrix)):
-#         if(i == 0 and j ==0):
-#             if(matrix[i][j] == "*"):
-#                 runSumRows.append()
+for i in range(firstLine[0]):
+    row = sys.stdin.readline()
+    print(row)
+    for j in range(firstLine[1]):
+        if(row[i][j] == "*"):
+            grid[i+1][j+1].append(1)
+        else:
+            grid[i+1][j+1].append(0)
+    grid.append(row)
+print(grid)
+# calc the prefix sum
+for i in range(1,rows+1):
+    for j in range(1,cols+1):
+        grid[i][j] += grid[i][j-1] + grid[i-1][j] - grid[i-1][j-1]
+
