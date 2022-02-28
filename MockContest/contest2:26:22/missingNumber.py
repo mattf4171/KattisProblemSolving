@@ -38,3 +38,5 @@ for i in range(numbers):  # (2<=n<=100)
         if checkneighbor(3, i, valCheck):
             break
     valCheck += 1
+
+    
