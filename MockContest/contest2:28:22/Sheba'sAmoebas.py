@@ -6,6 +6,8 @@
 # Output
 # Display a single integer representing the number of loops in the input.
 
+# https://open.kattis.com/contests/i6p5t8/problems/amoebas
+
 grid_dimHW = [int(x) for x in input().split(' ')]
 
 DR = [0,1,0,-1]
@@ -29,7 +31,10 @@ def dfs(r, c):
         return 0
     g = grid[r][c] == "#" # printing 1 when found?
     grid[r][c] = "."
+    # return print(grid[r][c])
+    print(grid[r][c])
     if( nearPixel(r,c)):
+        # count the nearest BFS values
         return g
     for dir in range(4):
         g += dfs(r+DR[dir], c+DC[dir])
