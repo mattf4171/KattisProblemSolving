@@ -27,15 +27,13 @@ int main() {
   while (rounds--) {
     halfway = pow(2, rounds);
     int buffer = 0;
-    // cout << "halfway: " << halfway << "\n";
-    // cout << "ratings[halfway]: " << ratings[halfway] << "\n";
+
     for (int i = 0; i < halfway; i++) {
-      // cout << "ratings:[i]: " << ratings[i] << "\n";
-      // cout << "close: " << close << "\n";
+
       if (ratings[i]+close >= ratings[halfway + buffer]) {
         count++;
         buffer++;
-        // cout << "Count: " << count << "\n";
+    
       }
     }
     ratings.erase(ratings.begin(), ratings.begin()+halfway);
