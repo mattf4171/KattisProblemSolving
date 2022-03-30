@@ -26,7 +26,7 @@ using namespace std;
 
 
 string rotationalCipher(string input, int rotationFactor) {
-  // Write your code here
+  // Handle string, need a cipher string to encrypt original string
   string cipher = "";
   int temp;
   for(int i =0; i <input.size(); i++){
@@ -67,7 +67,6 @@ string rotationalCipher(string input, int rotationFactor) {
     else{
       cipher+=input[i];
     }
-    //cipher += input[i]+rotationFactor;
   }
   return cipher;
 }
