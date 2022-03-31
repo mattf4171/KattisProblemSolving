@@ -20,6 +20,7 @@ using namespace std;
 
 bool areTheyEqual(vector<int>& array_a, vector<int>& array_b){
   // Write your code here
+  // Tower Of Hanoi Problem
   sort(array_a.begin(), array_a.end()); // does not satisy the requirements
   sort(array_b.begin(), array_b.end());
   for (int i=0; i< array_a.size(); i++){
