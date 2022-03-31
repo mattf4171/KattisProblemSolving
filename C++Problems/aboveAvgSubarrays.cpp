@@ -13,14 +13,6 @@
 // A = [3, 4, 2]
 // output = [[1, 2], [1, 3], [2, 2]]
 // The above-average subarrays are [3, 4], [3, 4, 2], and [4].
-Welcome to Meta!
-
-This is just a simple shared plaintext pad, with no execution capabilities.
-
-When you know what language you would like to use during your interview,
-simply choose it from the dropdown in the top bar.
-
-Enjoy your interview!
   
 #include <bits/stdc++.h>
 using namespace std;
