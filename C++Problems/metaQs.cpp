@@ -3,6 +3,20 @@
 using namespace std;
 
 // To execute C++, please define "int main()"
+
+int fastestPower(int a, int b){ // 0(logn) MOST EFF ALG
+    if(b ==0){
+        return 1;
+    }
+    int x = fastestPower(a, b/2);
+    x = x * x;
+    if(n%2 ==1){
+        x = x *a;
+    }
+    return x;
+}
+
+
 int power(int a, int b){ // a = 2 | b = 5
     int val=1; // 1     
     for( int i=1; i <= b; i++){ // i=1 | i=2 | i=3 | i=4
@@ -72,6 +86,8 @@ vector<vector<int>> findPair(vector<int> arr, int x){ // [1 10 8 -15 3 5] , 13
   }
   return TdVec;
 }
+
+// Alternatively the fastest algorithm would be hash map
 
 
 
