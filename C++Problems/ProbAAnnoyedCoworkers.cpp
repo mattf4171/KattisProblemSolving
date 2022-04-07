@@ -16,7 +16,7 @@
 
 // Sample Input 1 Explanation
 // You have 4 coworkers and you need to ask for help 4 times. Initially, their annoyance levels are 𝑎1=1,𝑎2=2,𝑎3=3,𝑎4=4, the increases are 𝑑1=2,𝑑2=3,𝑑3=4,𝑑4=5. One optimal solution is to ask for help twice from coworker 1, once from coworker 2, and once from coworker 3, in which case the final annoyance levels are: 𝑎1=1+2⋅2=5,𝑎2=2+3=5,𝑎3=3+4=7,𝑎4=4. The coworker that is most annoyed at you is coworker 3, whose annoyance level at you is 7. Or, you could ask coworker 1 for help 3 times and coworker 2 once, leaving you with 𝑎1=1+3⋅2=7,𝑎2=2+3=5,𝑎3=3,𝑎4=4. Both strategies yield the same minimal maximum amount.
-#include<stdc/bits.++h>
+#include<bits/stdc++.h>
 
 int main(){
     int h, c, a, d;
@@ -30,5 +30,8 @@ int main(){
         tempVals.push_back(b);
         values.push_back(tempVals);
         h--;
+    }
+    for(int i=0; i<values.size(); i++){
+        if()
     }
 }
