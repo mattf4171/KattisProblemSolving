@@ -6,21 +6,19 @@
 
 # You must write an algorithm that runs in O(n) time and without using the division operation.
 
-
 class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
         vector<int> answer(nums.size(), 0);
         vector<int> leftSide(nums.size(), 0);
         vector<int> rightSide(nums.size(), 0);
-        
-        for (int i=0; i<nums.size(); i++){
-            if(i==0) leftSide[i] = nums[0];
+        leftSide[0] = nums[0];
+        for (int i=1; i<nums.size(); i++){
             leftSide[i] = nums[i] * leftSide[i-1];
         }
         
-        for (int i = nums.size() -1; i >=0; i--){
-            if(i==nums.size()-1) rightSide[nums.size()-1] = nums[nums.size()-1];
+        rightSide[nums.size()-1] = nums[nums.size()-1];
+        for (int i = nums.size() -2; i >=0; i--){
             rightSide[i] = nums[i] * rightSide[i+1];
         }
         
