@@ -5,7 +5,6 @@ listOfNums = []
 valCheck = 1
 
 
-# wrong answer in one case
 
 def checkneighbor(steps, element, valCheck):
     if steps == 1:

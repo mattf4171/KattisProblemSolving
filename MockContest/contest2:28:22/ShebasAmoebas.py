@@ -14,8 +14,8 @@ DR = [0, 1, 0, -1, 1, -1, -1, 1]
 DC = [1, 0, -1, 0, 1, 1, -1, -1]
 cnt =0
 
-def dfs(r, c):
-    if r< 0 or r >=grid_dimHW[0] or c<0 or c>=grid_dimHW[1]:
+def dfs( r , c ):
+    if r < 0 or r >= grid_dimHW[0] or c < 0 or c >= grid_dimHW[1]:
         return
     if grid[r][c] == ".":
         return
@@ -31,6 +31,6 @@ for i in range(grid_dimHW[0]):
 for i in range(grid_dimHW[0]):
     for j in range(grid_dimHW[1]):
         if grid[i][j] == "#":
-            cnt+=1
-            dfs(i,j)
+            cnt += 1
+            dfs(i, j)
 print(cnt)
