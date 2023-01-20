@@ -55,10 +55,8 @@ def merge_the_tools(string, k):
     lim = int(len(string)/k)
     index_to_slice = [i*k for i in range(1,(lim+1))]
     index_to_slice.insert(0,0)
-    # index_to_slice.push(-1)
     u_i = []
     for i in range(lim):
-        # u_i.append(s%tring[ index_to_slice[i]: index_to_slice[i+1] ] )
         p = ""
         for char in string[ index_to_slice[i]: index_to_slice[i+1] ]:
             if char not in p:
