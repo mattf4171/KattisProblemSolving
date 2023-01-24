@@ -33,7 +33,8 @@ Output Format
 
 # Complete the time_delta function below.
 def time_delta(t1, t2):
-    # abs(t1 - t2)
+    # returns the abs(t1 - t2)
+    
     time_zone = [ int(t1.split()[5]), int(t2.split()[5]) ] # hr-min
     months = {"Jan":1, "Feb":2, "Mar":3, "Apr":4, "May":5, "Jun":6, 
               "Jul":7, "Aug":8, "Sept":9, "Oct":10, "Nov":11, "Dec":12}
@@ -48,7 +49,7 @@ def time_delta(t1, t2):
     year_to_sec = (year[1] - year[0])  * 3.154e+7
     
     diff_hr_to_sec = math.floor(time_zone[0] / 100) * (60**2)
-    # print(time_zone[0])
+    # condition to update the difference in time
     if time_zone[0] > 999 or time_zone[0] < -999:
         if int(time_zone[0]) < 0:
         # carry the sign
@@ -56,7 +57,6 @@ def time_delta(t1, t2):
         else:
             diff_min_to_sec = int(str(time_zone[0])[2:]) * 60
 
-        # diff_min_to_sec = int(str(time_zone[0])[2:]) * 60
     elif time_zone[0] > 99 or time_zone[0] < -99:
 
         if int(time_zone[0]) < 0:
@@ -64,7 +64,6 @@ def time_delta(t1, t2):
             diff_min_to_sec = -1 * int(str(time_zone[0])[2:]) * 60
         else:
             diff_min_to_sec = int(str(time_zone[0])[1:]) * 60
-        # diff_min_to_sec = int(str(time_zone[0])[1:]) * 60
     else:
 
         if int(time_zone[0]) < 0:
@@ -73,15 +72,11 @@ def time_delta(t1, t2):
         else:
             diff_min_to_sec = int(str(time_zone[0])[:]) * 60
     
-    
-    # print("time_zone", int(str(time_zone[0])))
-    # print("diff_hr_to_sec: {}\ndiff_min_to_sec: {}".format(diff_hr_to_sec,diff_min_to_sec))
     time = [t1.split(" ")[4].split(":"), t2.split(" ")[4].split(":")]
-    # print('time: ', time)
     hour_to_sec = ( int(time[0][0]) * (60**2) ) - ( ( int(time[1][0]) * (60**2) ) + diff_hr_to_sec)
     min_to_sec = ( int(time[0][1]) * 60 ) - ( ( int(time[1][1]) * 60) + diff_min_to_sec )
     sec = int(time[0][2]) - int(time[1][2])
-    # print('Ouput: ',hour_to_sec ,":", min_to_sec ,":", sec)
+    
     return int(abs(hour_to_sec + min_to_sec + sec + day_to_sec + month_to_sec + year_to_sec))
 
 if __name__ == '__main__':
