@@ -6,7 +6,7 @@ import sys
 
 """
 Matthew Fernandez
-1/20/2022
+1/23/2022
 
 When users post an update on social media,such as a URL, image, status update etc., other users in their network are able to view this new post on their news feed. Users can also see exactly when the post was published, i.e, how many hours, minutes or seconds ago.
 
@@ -48,15 +48,34 @@ def time_delta(t1, t2):
     year_to_sec = (year[1] - year[0])  * 3.154e+7
     
     diff_hr_to_sec = math.floor(time_zone[0] / 100) * (60**2)
-    # print("this", str(time_zone[0]))
+    # print(time_zone[0])
     if time_zone[0] > 999 or time_zone[0] < -999:
-        diff_min_to_sec = int(str(time_zone[0])[2:]) * 60
-    elif time_zone[0] > 99 or time_zone[0] < -99:
-        diff_min_to_sec = int(str(time_zone[0])[1:]) * 60
-    else:
-        diff_min_to_sec = int(str(time_zone[0])[:]) * 60
-    # print('str: ', time_zone[0])
+        if int(time_zone[0]) < 0:
+        # carry the sign
+            diff_min_to_sec = -1 * int(str(time_zone[0])[3:]) * 60
+        else:
+            diff_min_to_sec = int(str(time_zone[0])[2:]) * 60
 
+        # diff_min_to_sec = int(str(time_zone[0])[2:]) * 60
+    elif time_zone[0] > 99 or time_zone[0] < -99:
+
+        if int(time_zone[0]) < 0:
+        # carry the sign
+            diff_min_to_sec = -1 * int(str(time_zone[0])[2:]) * 60
+        else:
+            diff_min_to_sec = int(str(time_zone[0])[1:]) * 60
+        # diff_min_to_sec = int(str(time_zone[0])[1:]) * 60
+    else:
+
+        if int(time_zone[0]) < 0:
+        # carry the sign
+            diff_min_to_sec = -1 * int(str(time_zone[0])[1:]) * 60
+        else:
+            diff_min_to_sec = int(str(time_zone[0])[:]) * 60
+    
+    
+    # print("time_zone", int(str(time_zone[0])))
+    # print("diff_hr_to_sec: {}\ndiff_min_to_sec: {}".format(diff_hr_to_sec,diff_min_to_sec))
     time = [t1.split(" ")[4].split(":"), t2.split(" ")[4].split(":")]
     # print('time: ', time)
     hour_to_sec = ( int(time[0][0]) * (60**2) ) - ( ( int(time[1][0]) * (60**2) ) + diff_hr_to_sec)
