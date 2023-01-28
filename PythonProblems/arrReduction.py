@@ -1,3 +1,4 @@
+import time
 import math
 import sys
 import numpy as np
@@ -38,9 +39,11 @@ if __name__ == "__main__":
     for i in range(n):
         temp = int(input())
         arr.append(temp)
+    startTime = time.time()
     totalCost = findTotalCost(arr)
+    executionTime = time.time() - startTime
     print(totalCost)
-
+    print(executionTime)
 """
 EX Input:
 6
