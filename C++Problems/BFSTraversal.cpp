@@ -1,5 +1,5 @@
 /*
- * Title: main_hw7_2.cpp
+ * Title: BFSTraversal.cpp
  * Abstract: Program that conducts the BFS traversal of a graph and displays city names 
 			 in the range of hop(s) from a starting city.
  * Name: Matthew Fernandez
