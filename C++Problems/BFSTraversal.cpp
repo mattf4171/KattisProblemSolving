@@ -29,7 +29,7 @@ void BFS(vector<vector<int>> g, vector<vector<int>> & mark, int total_hops, int 
 
 int main()
 {
-	// most of the main Fn was recycled from main_hw5_2.cpp
+	// Declare needed variables to handle input parameters
 	int numVertices, edges, starter=0, start_vertex, total_hops;
 	string vertName, start_node_string;
 	vector<vector<int>> vertices; // 2d vector
