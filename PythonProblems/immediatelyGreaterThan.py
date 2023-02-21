@@ -1,3 +1,24 @@
+"""
+Matthew Fernandez
+2/21/22
+
+Given an array arr[] of size N containing positive integers and an integer X. 
+You need to find the value in the array which is greater than X and closest to it. 
+( if no such value exists the answer should be -1)
+
+Input:
+  N = 5
+  arr[] = {4 67 13 12 15}
+  X = 16
+
+Output: 
+  67
+
+Explanation: 
+  For a given value 16, there is only one value 67 that greater than
+  it and so it is the answer.
+"""
+
 class Solution:
     # inf has been imported in driver code
     def immediateGreater(self,arr,n,x):
